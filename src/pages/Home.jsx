@@ -1,10 +1,12 @@
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'
 import Navbar from "../components/Navbar";
 import PokemonCard from "../components/PokemonCard";
 import Grid from '@mui/material/Grid';
 import axios from "axios";
 import { Skeletons } from "../components/Skeletons";
+import { PokemonPage } from "./PokemonPage";
 
 export const Home = () => {
 
@@ -45,7 +47,9 @@ export const Home = () => {
           ) : (
             pokemons.map((pokemon, key) => (
               <Grid item lg={2} md={3} sm={6} xs={12} key={key}>
-                <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} types={pokemon.data.types}/>
+                <Link to={`/detail/${pokemon.data.id}`}>
+                  <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} types={pokemon.data.types}/>
+                </Link>
               </Grid>
             ))
           )}

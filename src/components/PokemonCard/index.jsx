@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { PokemonPage } from '../../pages/PokemonPage';
 
 export default function PokemonCard({ name, image, types }) {
   
